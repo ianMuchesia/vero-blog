@@ -1,0 +1,43 @@
+.single-blog-section{
+    padding: 50px ;
+    background: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.single-blog-title{
+    text-align: center;
+    margin: 50px 0px;
+}
+
+.single-blog-container {
+    padding: 0px 50px;
+  
+
+}
+
+.blog-back {
+   
+ margin-top: 100px;
+   
+}
+
+.blog-back a{
+    text-decoration: none;
+    background: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+
+@media  (min-width: 768px) {
+    .single-blog-container {
+       
+        max-width: 70%;
+    
+    }
+}
