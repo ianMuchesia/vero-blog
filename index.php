@@ -7,6 +7,7 @@ $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
 $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_SPECIAL_CHARS);
 $blog_id = filter_input(INPUT_GET, 'blog_id', FILTER_SANITIZE_NUMBER_INT);
 $action =  filter_input(INPUT_POST, 'action', FILTER_SANITIZE_SPECIAL_CHARS);
+$update_id = filter_input(INPUT_POST, "update_id",FILTER_SANITIZE_NUMBER_INT);
 
 if (!$action) {
     $action =  filter_input(INPUT_GET, 'action', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -58,13 +59,12 @@ switch ($action) {
         include_once 'views/update.php';
         break;
     case "update-blog":
-        if (!$blog_id || !$title || !$content) {
-            // Handle invalid data or missing parameters
+        if (!$update_id || !$title || !$content) {
             header("Location: .?action=home.php");
             exit;
         }
-        var_dump($blog_id);
-        update_blog($blog_id,$title,$content);
+       
+       update_blog($update_id,$title,$content);
         $blogs = get_blogs();
         include_once "views/blogs.php";
         break;

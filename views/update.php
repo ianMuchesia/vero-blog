@@ -11,6 +11,7 @@
        </div>
         <form action="." method="post" class="blog-form">
         <input type="hidden" name="action" value="update-blog">
+        <input type="hidden" name="update_id" value="<?=$blog['id'];?>">
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title" class="form-control" 
